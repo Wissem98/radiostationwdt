@@ -1,38 +1,462 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+    height: 40vmin;
+    pointer-events: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
 @keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.card--id {
+    background: #cebf7b;
+    width: 3rem;
+    color: #333;
+    padding: 0.1rem;
+    font-weight: 700;
+    position: relative;
+    border-radius: 0 0 10px 0;
+    top: 0;
+    left: 0;
+}
+
+.card {
+    background: rgb(46, 45, 55);
+    width: 22rem;
+    color: rgb(100, 26, 26);
+    padding: 0.1rem;
+    font-weight: 700;
+    height: 33rem;
+    border-radius: 25px 25px 25px 25px;
+    margin-top: 5rem;
+    margin-left: 15rem;
+    perspective: 1000px;
+}
+
+.card-body {
+    width: 300px;
+    height: 413px;
+}
+
+.tbody {
+    overflow: scroll;
+    scrollbar-color: red;
+    background: rgb(46, 45, 55);
+}
+
+.header {
+    background: rgb(236, 177, 99);
+    width: 22rem;
+    height: 5rem;
+    color: rgb(100, 26, 26);
+    padding: 0.1rem;
+    font-weight: 700;
+    border-radius: 25px 25px 0 0;
+    top: 0;
+    left: 0;
+    margin-left: -0.1rem;
+    margin-top: -0.1rem;
+}
+
+.bottom {
+    background: rgb(38, 37, 46);
+    width: 22rem;
+    height: 5.6rem;
+    color: rgb(100, 26, 26);
+    padding: 0.1rem;
+    font-weight: 700;
+    border-radius: 0 0 25px 25px;
+    top: 0;
+    left: 0;
+    margin-left: -0.1rem;
+    margin-top: 1rem;
+}
+
+.currentstring {
+    width: 20rem;
+    font-size: 0.75rem;
+    font-weight: bolder;
+    color: rgb(247, 170, 77);
+    padding: 0.1rem;
+    border-radius: 0 0 10px 0;
+    top: 0;
+    right: 0;
+    margin-left: 0.9rem;
+    margin-top: 1rem;
+}
+
+.stationplayed {
+    width: 20rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+    color: rgb(157, 164, 181);
+    padding: 0.1rem;
+    border-radius: 0 0 10px 0;
+    top: 0;
+    right: 0;
+    margin-left: 0.8rem;
+    margin-top: -0.7rem;
+}
+
+.station {
+    width: 8rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    padding: 0.1rem;
+    border-radius: 0 0 10px 0;
+    top: 0;
+    right: 0;
+}
+
+.previous {
+    height: 47px;
+    width: 40px;
+    background-image: url("Images/back-arrow.png");
+    border: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 15px;
+    background-position: bottom;
+    background-origin: border-box;
+    background-position-y: bottom;
+    padding: 0.2em;
+    cursor: pointer;
+    outline: none;
+    transition: 1s ease-in-out;
+}
+
+.shutdown {
+    height: 46px;
+    width: 40px;
+    background-image: url("Images/switch.png");
+    border: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 24px;
+    border-radius: 25px 25px 25px 25px;
+}
+
+.headerelement {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.headerelement li {
+    display: inline-block;
+    min-width: 1em;
+    margin: -0.1em 0.73em;
+}
+
+.headerelement a {
+    text-decoration: none;
+    display: block;
+    font-family: Arial;
+    position: relative;
+    color: black;
+    padding: .5em 0
+}
+
+.headerradio {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.headerradio li {
+    display: inline-block;
+    min-width: 1em;
+    margin: -0.1em 0.73em;
+}
+
+.headerradio a {
+    text-decoration: none;
+    display: block;
+    font-family: Arial;
+    position: relative;
+    color: black;
+    padding: .5em 0
+}
+
+.headerelement a:hover:before {
+    content: '';
+    border-radius: 1000px;
+    min-width: calc(300px + 12px);
+    min-height: calc(60px + 12px);
+    border: 6px solid #00FFCB;
+    box-shadow: 0 0 60px rgba(0, 255, 203, .64);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: all .3s ease-in-out 0s;
+}
+
+.a:before {
+    background-image: url("Images/switch2.png");
+    background-color: purple;
+}
+
+.a:hover,
+.a:focus {
+    color: #313133;
+    transform: translateY(-6px);
+}
+
+a:hover::before,
+a:focus::before {
+    opacity: 1;
+}
+
+a::after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    border: 6px solid purple;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 1.5s infinite;
+}
+
+a:hover::after,
+a:focus::after {
+    animation: none;
+    display: none;
+}
+
+@keyframes ring {
+    0% {
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+    100% {
+        width: 300px;
+        height: 300px;
+        opacity: 0;
+    }
+}
+
+.table {
+    background-color: transparent;
+    margin-inline-start: 22px;
+    cursor: pointer;
+}
+
+table.table td {
+    font-size: 22px;
+    padding-left: 1.2rem;
+    padding-top: 1.1rem;
+    color: rgb(157, 164, 181);
+    padding-right: 99-px;
+}
+
+.table td {
+    border-top: rgb(100, 26, 26) -3px solid;
+    border-color: gray;
+    font-weight: bold;
+    padding-right: 0.2px;
+}
+
+.nameS {
+    font-weight: normal;
+}
+
+.table thead tr:hover th,
+.table tbody tr:hover td {
+    background-color: rgb(236, 177, 99);
+    color: honeydew;
+    transform: scale(1.1);
+    transition: transform 300ms;
+}
+
+.content {
+    background-color: #cccccc;
+}
+
+.content.collapse {
+    display: none;
+}
+
+.card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+
+/* Position the front and back side */
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    /* Safari */
+    backface-visibility: hidden;
+}
+
+
+/* Style the front side (fallback if image is missing) */
+
+
+/* Style the back side */
+
+.flip-card-front {
+    transform: rotateY(180deg);
+    height: 413px;
+}
+
+.flip-card-back {
+    background-image: url("Images/logoRSW.png");
+    background-repeat: no-repeat;
+    margin-left: 73px;
+    margin-top: 110px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.slogan {
+    color: rgb(236, 177, 99);
+    margin-top: 263px;
+    margin-left: -132px;
+    margin-right: 12px;
+    font-size: 19px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.slo {
+    color: rgb(236, 177, 99);
+    font-size: 19px;
+    margin-left: -132px;
+    margin-top: -13px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.fade {
+    animation: fade-in-keyframes 1s;
+}
+
+@keyframes fade-in-keyframes {
+    from {
+        opacity: 0
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.accent-bar {
+    height: 25px;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    margin-top: 48px;
+    margin-left: 37px;
+    margin-right: -22px;
+}
+
+ul .accents {
+    list-style-type: none;
+}
+
+ul.accents li {
+    display: inline-block;
+    margin-left: 5px;
+    margin-top: -42px;
+}
+
+.plus {
+    height: 57px;
+    width: 60px;
+    background-image: url("Images/plus.png");
+    border: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: top;
+    background-origin: border-box;
+    background-position-y: top;
+    cursor: pointer;
+}
+
+.label {
+    height: 87px;
+    width: 86px;
+    background-image: url("Images/imagestation.png");
+    border: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 85px;
+    background-origin: border-box;
+    background-position-y: center;
+    cursor: pointer;
+    margin-right: 30px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .label {
+        animation: App-logo-spin infinite 3s linear;
+    }
+}
+
+.minus {
+    height: 57px;
+    width: 60px;
+    background-image: url("Images/minus.png");
+    border: transparent;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 35px;
+    background-position: top;
+    background-origin: border-box;
+    background-position-y: top;
+    cursor: pointer;
+    outline: none;
+    transition: 1s ease-in-out;
+    margin-left: -60px;
+    margin-right: 30px;
 }
