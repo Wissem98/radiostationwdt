@@ -7,10 +7,16 @@ This is a simple Radio widget .The widget is mostly static -selecting station is
   After downoalding the repositopry follow this steps to open the project :
    Open terminal and type :
   yarn add ts-node-dev --dev
+  
+  
   npm start 
   
    cd ./frontend/
+   
+   
    yarn add ts-node-dev --dev
+   
+   
    npm start 
    
    
